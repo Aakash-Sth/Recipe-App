@@ -16,7 +16,6 @@ class _MealsScreenState extends State<MealsScreen> {
   List<Meal> categoryMeals;
   @override
   void didChangeDependencies() {
-    // TODO: implement didChangeDependencies
     final args =
         ModalRoute.of(context).settings.arguments as Map<String, String>;
     final categoryId = args['id'];
@@ -27,31 +26,29 @@ class _MealsScreenState extends State<MealsScreen> {
     super.didChangeDependencies();
   }
 
-  void _removeMeal(String mealId) {
-    setState(() {
-      categoryMeals.removeWhere((meal) => meal.id == mealId);
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           title: Text(categoryName),
         ),
-        body: ListView.builder(
-          itemBuilder: (context, index) {
-            Meal meal = categoryMeals[index];
-            return MealItem(
-              title: meal.title,
-              imageUrl: meal.imageUrl,
-              duration: meal.duration,
-              complexity: meal.complexity,
-              affordability: meal.affordability,
-              id: meal.id,
-            );
-          },
-          itemCount: categoryMeals.length,
-        ));
+        body: categoryMeals.length < 1
+            ? Center(
+                child: Text("No meals having current filters are available."),
+              )
+            : ListView.builder(
+                itemBuilder: (context, index) {
+                  Meal meal = categoryMeals[index];
+                  return MealItem(
+                    title: meal.title,
+                    imageUrl: meal.imageUrl,
+                    duration: meal.duration,
+                    complexity: meal.complexity,
+                    affordability: meal.affordability,
+                    id: meal.id,
+                  );
+                },
+                itemCount: categoryMeals.length,
+              ));
   }
 }

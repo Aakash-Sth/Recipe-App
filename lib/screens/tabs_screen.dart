@@ -33,25 +33,6 @@ class _TabsScreenState extends State<TabsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    // DefaultTabController(
-    //     length: 2,
-    //     child: Scaffold(
-    //       appBar: AppBar(
-    //         title: Text("DailyMeals"),
-    //         bottom: TabBar(tabs: <Widget>[
-    // Tab(
-    //   text: 'Categories',
-    //   icon: Icon(Icons.category),
-    // ),
-    // Tab(
-    //   text: 'Favourites',
-    //   icon: Icon(Icons.favorite),
-    // )
-    //         ]),
-    //       ),
-    //       body: TabBarView(
-    //           children: <Widget>[CategoriesScreen(), FavouritesScreen()]),
-    //     ));
     return Scaffold(
       appBar: AppBar(
         title: Text(

@@ -13,11 +13,6 @@ class CategoryItem extends StatelessWidget {
   void selectCategory(BuildContext ct) {
     Navigator.of(ct).pushNamed(MealsScreen.routeName,
         arguments: {'id': id, 'title': title});
-    // MaterialPageRoute(
-    //   builder: (_) {
-    //     return MealsScreen(id, title);
-    //   },
-    // ),
   }
 
   @override
@@ -31,17 +26,10 @@ class CategoryItem extends StatelessWidget {
         borderRadius: BorderRadius.circular(15),
         child: Container(
           padding: const EdgeInsets.all(20),
-          // child: Stack(children: [
-          //   Image.network(
-          //     _imageUrl,
-          //     width: 200,
-          //     fit: BoxFit.cover,
-          //   ),
           child: Text(
             title,
             style: Theme.of(context).textTheme.headline6,
           ),
-          // ]),
           decoration: BoxDecoration(
               color: Color.fromRGBO(50, 59, 69, 1),
               gradient: LinearGradient(

@@ -24,8 +24,6 @@ class MealRecipeScreen extends StatelessWidget {
         padding: EdgeInsets.symmetric(vertical: 7, horizontal: 10),
         decoration: BoxDecoration(
             color: Color.fromRGBO(66, 66, 66, 1),
-            // border: Border.all(
-            //     color: Color.fromARGB(255, 253, 253, 253), width: 2),
             borderRadius: BorderRadius.circular(10)),
         child: child);
   }
@@ -37,7 +35,6 @@ class MealRecipeScreen extends StatelessWidget {
 
     ;
     return Scaffold(
-      // bottomNavigationBar: Text('hello'),
       appBar: AppBar(title: FittedBox(child: Text(selectedMeal.title))),
       body: SingleChildScrollView(
           child: Column(
@@ -58,12 +55,9 @@ class MealRecipeScreen extends StatelessWidget {
                   size: 28,
                 ),
                 backgroundColor: Colors.white,
-                // Color.fromRGBO(66, 66 , 66, 1),
                 foregroundColor: Colors.redAccent[400],
-                // Colors.white.withOpacity(0.8),
                 onPressed: () {
                   toggleFavourite(mealId);
-                  // Navigator.of(context).pop(mealId);
                 },
               ),
             ),
@@ -109,19 +103,6 @@ class MealRecipeScreen extends StatelessWidget {
           ))
         ],
       )),
-      // floatingActionButton: FloatingActionButton(
-      //   child: Icon(
-      //     isFavourite(mealId) ? Icons.favorite : Icons.favorite_border,
-      //     size: 28,
-      //   ),
-      //   backgroundColor: Colors.black,
-      //   // Color.fromRGBO(66, 66 , 66, 1),
-      //   foregroundColor: Colors.white.withOpacity(0.87),
-      //   onPressed: () {
-      //     toggleFavourite(mealId);
-      //     // Navigator.of(context).pop(mealId);
-      //   },
-      // ),
     );
   }
 }

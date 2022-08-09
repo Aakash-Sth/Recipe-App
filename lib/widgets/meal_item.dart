@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:recipe_app/models/meals.dart';
 import 'package:recipe_app/screens/meal_recipe_screen.dart';
@@ -25,11 +23,6 @@ class MealItem extends StatelessWidget {
 
   void selectMeal(BuildContext context) {
     Navigator.of(context).pushNamed(MealRecipeScreen.routeName, arguments: id);
-    //   .then((value) {
-    // if (value != null) {
-    //   removeMeal(value);
-    // }
-    // });
   }
 
   String getAffordability() {

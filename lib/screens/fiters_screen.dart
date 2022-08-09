@@ -56,19 +56,15 @@ class _FiltersScreenState extends State<FiltersScreen> {
                 };
                 widget.saveFilters(newFilters);
               },
-              icon: Icon(Icons.save))
+              icon: Icon(
+                Icons.save,
+                size: 27,
+              ))
         ],
       ),
       drawer: DrawerDetails(),
       body: Column(
         children: [
-          // Container(
-          //   padding: EdgeInsets.all(20),
-          //   child: Text(
-          //     "Filter your meals",
-          //     style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-          //   ),
-          // ),
           Expanded(
               child: ListView(
             children: [

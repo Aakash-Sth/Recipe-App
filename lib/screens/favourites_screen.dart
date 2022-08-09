@@ -11,12 +11,6 @@ class FavouritesScreen extends StatefulWidget {
 }
 
 class _FavouritesScreenState extends State<FavouritesScreen> {
-  // void refreshHandler()
-  // {
-  //   setState(() {
-
-  //   });
-  // }
   @override
   Widget build(BuildContext context) {
     if (widget.favouriteMeals.isEmpty) {
@@ -34,7 +28,6 @@ class _FavouritesScreenState extends State<FavouritesScreen> {
             complexity: meal.complexity,
             affordability: meal.affordability,
             id: meal.id,
-            // refreshHandler:refreshHandler
           );
         },
         itemCount: widget.favouriteMeals.length,
