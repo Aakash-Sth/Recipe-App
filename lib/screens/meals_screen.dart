@@ -12,22 +12,15 @@ class MealsScreen extends StatefulWidget {
 }
 
 class _MealsScreenState extends State<MealsScreen> {
-  var categoryName;
-  List<Meal> categoryMeals;
   @override
-  void didChangeDependencies() {
+  Widget build(BuildContext context) {
     final args =
         ModalRoute.of(context).settings.arguments as Map<String, String>;
     final categoryId = args['id'];
-    categoryName = args['title'];
-    categoryMeals = widget.filteredMeals.where((meal) {
+    var categoryName = args['title'];
+    List<Meal> categoryMeals = widget.filteredMeals.where((meal) {
       return meal.categories.contains(categoryId);
     }).toList();
-    super.didChangeDependencies();
-  }
-
-  @override
-  Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           title: Text(categoryName),
