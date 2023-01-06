@@ -2,6 +2,30 @@
 
 A new Flutter project.
 
+UI of screens:
+
+<img src ="./screenshots/Categories Screen.png" width = 250>
+
+*Categories Screen* 
+
+<img src ="./screenshots/Category Items Screen.png" width = 250>
+
+*Category Meals Screen* 
+
+<img src ="./screenshots/Meal Detail Screen.png" width = 250>
+
+*Meal Detail Screen* 
+
+<img src ="./screenshots/Favourites Screen.png" width = 250>
+
+*Favourites Screen* 
+
+
+<img src ="./screenshots/Filters Screen.png" width = 250>
+
+*Filters Screen* 
+
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.

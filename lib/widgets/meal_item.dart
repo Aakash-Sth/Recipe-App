@@ -1,6 +1,8 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:recipe_app/models/meals.dart';
 import 'package:recipe_app/screens/meal_recipe_screen.dart';
+import 'package:recipe_app/widgets/custom_image.dart';
 
 class MealItem extends StatelessWidget {
   final String id;
@@ -56,84 +58,87 @@ class MealItem extends StatelessWidget {
     return InkWell(
       onTap: () => selectMeal(context),
       child: Card(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(15),
+        ),
         elevation: 4,
         margin: const EdgeInsets.all(10),
-        child: Column(children: [
-          Stack(children: [
-            ClipRRect(
-              borderRadius: const BorderRadius.only(
-                  topLeft: Radius.circular(15), topRight: Radius.circular(15)),
-              child: Image.network(
-                imageUrl,
-                height: 250,
-                width: double.infinity,
-                fit: BoxFit.cover,
+        child: Column(
+          children: [
+            Stack(children: [
+              ClipRRect(
+                borderRadius: const BorderRadius.vertical(
+                  top: Radius.circular(15),
+                ),
+                child: CustomImage(
+                  imageUrl: imageUrl,
+                  height: 250,
+                ),
               ),
-            ),
-            Positioned(
-              bottom: 20,
-              right: 0,
-              child: Container(
-                width: 250,
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
-                decoration: BoxDecoration(
-                    color: Colors.deepOrange.withOpacity(0.65),
-                    borderRadius: const BorderRadius.only(
-                        topLeft: Radius.circular(12),
-                        bottomLeft: Radius.circular(12))),
-                child: Text(
-                  title,
-                  style: const TextStyle(
-                    fontSize: 25,
+              Positioned(
+                bottom: 20,
+                right: 0,
+                child: Container(
+                  width: 250,
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
+                  decoration: BoxDecoration(
+                      color: Colors.deepOrange.withOpacity(0.65),
+                      borderRadius: const BorderRadius.only(
+                          topLeft: Radius.circular(12),
+                          bottomLeft: Radius.circular(12))),
+                  child: Text(
+                    title,
+                    style: const TextStyle(
+                      fontSize: 25,
+                    ),
                   ),
                 ),
+              )
+            ]),
+            Padding(
+              padding: const EdgeInsets.all(10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Row(
+                    children: [
+                      const Icon(Icons.schedule),
+                      const SizedBox(
+                        width: 5,
+                      ),
+                      Text(
+                        "$duration mins",
+                        style: const TextStyle(color: Colors.black),
+                      )
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      const Icon(Icons.work),
+                      const SizedBox(
+                        width: 5,
+                      ),
+                      Text(
+                        getComplexity(),
+                        style: const TextStyle(color: Colors.black),
+                      )
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      const Icon(Icons.attach_money),
+                      Text(
+                        getAffordability(),
+                        style: const TextStyle(color: Colors.black),
+                      )
+                    ],
+                  )
+                ],
               ),
             )
-          ]),
-          Padding(
-            padding: const EdgeInsets.all(10),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Row(
-                  children: [
-                    const Icon(Icons.schedule),
-                    const SizedBox(
-                      width: 5,
-                    ),
-                    Text(
-                      "$duration mins",
-                      style: const TextStyle(color: Colors.black),
-                    )
-                  ],
-                ),
-                Row(
-                  children: [
-                    const Icon(Icons.work),
-                    const SizedBox(
-                      width: 5,
-                    ),
-                    Text(
-                      getComplexity(),
-                      style: const TextStyle(color: Colors.black),
-                    )
-                  ],
-                ),
-                Row(
-                  children: [
-                    const Icon(Icons.attach_money),
-                    Text(
-                      getAffordability(),
-                      style: const TextStyle(color: Colors.black),
-                    )
-                  ],
-                )
-              ],
-            ),
-          )
-        ]),
+          ],
+        ),
       ),
     );
   }

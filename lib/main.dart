@@ -1,3 +1,7 @@
+// ignore_for_file: unused_import
+
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import './dummy_data.dart';
 import './models/meals.dart';
@@ -5,6 +9,7 @@ import './screens/fiters_screen.dart';
 import './screens/meal_recipe_screen.dart';
 import './screens/tabs_screen.dart';
 import './screens/meals_screen.dart';
+import 'models/category.dart';
 
 void main() {
   runApp(MyApp());
@@ -68,11 +73,10 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'DeliMeals',
+      title: 'Daily Meals',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
           primaryColor: Color.fromRGBO(97, 97, 97, 1),
-          accentColor: Colors.grey,
-          // canvasColor: const Color.fromARGB(255, 18, 18, 18),
           canvasColor: Color.fromRGBO(33, 33, 33, 1),
           fontFamily: 'Raleway',
           appBarTheme: AppBarTheme(

@@ -3,7 +3,7 @@ import 'package:recipe_app/models/meals.dart';
 import 'package:recipe_app/widgets/meal_item.dart';
 
 class FavouritesScreen extends StatefulWidget {
-  List<Meal> favouriteMeals;
+  final List<Meal> favouriteMeals;
   FavouritesScreen(this.favouriteMeals);
 
   @override

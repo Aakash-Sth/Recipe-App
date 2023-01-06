@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import
+
 import 'package:flutter/material.dart';
 import 'package:recipe_app/dummy_data.dart';
 import '../models/meals.dart';
@@ -17,9 +19,6 @@ class CategoryItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String _imageUrl = DUMMY_MEALS.firstWhere((meal) {
-      return meal.categories.contains(id);
-    }).imageUrl;
     return InkWell(
         onTap: () => selectCategory(context),
         splashColor: Colors.grey,
